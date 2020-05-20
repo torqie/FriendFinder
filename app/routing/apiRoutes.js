@@ -6,7 +6,7 @@ module.exports = function(app) {
   });
 
   app.post("/api/friends", function (req, res) {
-    console.log(req.body)
+    console.log("request", req.body);
     var ret = {
       name: req.body.name,
       photo: req.body.photo,
@@ -44,7 +44,6 @@ module.exports = function(app) {
     }
     friends.push(ret);
     result.sort((a, b) => (a.color > b.color) ? 1 : -1);
-    console.log(result);
     return res.json(result[0]);
   });
 
