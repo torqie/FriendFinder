@@ -23,31 +23,34 @@ module.exports = function(app) {
           parseInt(req.body.question10),
       ]
     }
-    var differences = []
+    const result = [];
     for(let i = 0; i < friends.length; i++) {
-      const friendScores = friends[i].scores;
+      const friend = friends[i];
+      const friendScores = friend.scores;
+      const differences = [];
+
       for(let i = 0; i < friendScores.length; i++) {
         const friendScore = friendScores[i];
-        console.log(ret.scores[i] + " - " + friendScore);
-
-
-        differences.push(calc(ret.scores[i] - friendScore));
+        differences.push(calc(ret.scores[i], friendScore));
       }
+
+      var difference = differences.reduce((a, b) => a + b, 0);
+      result.push({
+        friend: friend,
+        difference: difference
+      });
+
+
     }
-
-    console.log("Diff: ", differences);
-
-
-
-
     friends.push(ret);
-    return res.json(ret);
+    result.sort((a, b) => (a.color > b.color) ? 1 : -1);
+    console.log(result);
+    return res.json(result[0]);
   });
 
 
   var calc = function(a, b) {
-    console.log("Math: ", Math.abs(parseInt(a) - parseInt(b)));
-    return Math.abs(parseInt(a) - parseInt(b));
+    return Math.abs(parseInt(a)-parseInt(b));
   }
 
 }
