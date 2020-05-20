@@ -1,3 +1,3 @@
-const friends = [];
-
-module.exports(friends);
+module.exports =  [
+    {name: 'jeff'}
+  ];
