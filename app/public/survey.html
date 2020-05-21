@@ -18,6 +18,9 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        <a href="/">Go Home</a>
+        <div class="card shadow">
+          <div class="card-body">
         <h1>Survey Questions</h1>
 
         <h3>About You</h3>
@@ -37,7 +40,7 @@
         <h3>Survey Questions</h3>
 
         <div class="form-group">
-          <label for="question1">asdfasdfasdfasdfasdf</label>
+          <label for="question1">Your mind is always buzzing with unexplored ideas and plans.</label>
           <select id="question1" class="form-control">
             <option value="-1" selected>Select One...</option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -49,7 +52,7 @@
         </div>
 
         <div class="form-group">
-          <label for="question2">asdfasdfasdfasdfasdf</label>
+          <label for="question2">Generally speaking, you rely more on your experience than your imagination.</label>
           <select id="question2" class="form-control">
             <option value="-1" selected>Select One...</option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -160,6 +163,8 @@
       </form>
 
       </div>
+      </div>
+      </div>
     </div>
   </div>
 
@@ -229,24 +234,11 @@
         });
       });
 
-      $("#recommended #rec-ok").on("click", function(event) {
+      $("#recommended #rec-ok").on("click", function() {
         $("#recommended").modal("hide");
         window.location.href = "/";
       })
     });
-
-
-
-
-    // $("#submit-survey").on("click", function(event) {
-    //   event.preventDefault();
-    //   console.log($("#survey"));
-    //   $.post("/api/friends", $("#survey").serialize(), function(data) {
-    //     console.log(data);
-    //   });
-    // });
-
-
   </script>
 </body>
 </html>
