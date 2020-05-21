@@ -1,4 +1,10 @@
 body {
   padding: 50px;
-  background-color: #e8e8e8;
+  background-color: #eeeeee;
+}
+
+.jumbotron {
+  margin-top: -50px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
 }
