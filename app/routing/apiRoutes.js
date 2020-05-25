@@ -43,7 +43,7 @@ module.exports = function(app) {
 
     }
     friends.push(ret);
-    result.sort((a, b) => (a.color > b.color) ? 1 : -1);
+    result.sort((a, b) => (a.difference > b.difference) ? 1 : -1);
     return res.json(result[0]);
   });
 
